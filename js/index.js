@@ -44,17 +44,16 @@ function handlePlusButton() {
 
 function handleMinusButton() {
     let currentMinutes = Number(minutes.textContent);
-    let isNumber = !isNaN(currentMinutes);
+    let isNotANumber = isNaN(currentMinutes);
+    let isResultPositive = currentMinutes >= 5;
 
-    if (isNumber) {
-        if (currentMinutes >= 5) {
-            currentMinutes -= 5;
-        } else {
-            currentMinutes = 0;
-        }
-        minutes.textContent = currentMinutes;
-    } else {
+    if (isNotANumber) {
         alert("Os minutos têm que ser um número")
         location.reload();
+        return;
     }
+
+    isResultPositive ? currentMinutes -= 5 : currentMinutes = 0;
+
+    minutes.textContent = currentMinutes;
 }
