@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --txt-main-color: #323238;
+    --card-bg-color: #E1E1E6;
+    --btn-select-color: #ffffff;
+    --card-bg-select-color: #02799D;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    gap: 19.2rem;
+}
+
+#timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+}
+
+.time {
+    display: flex;
+    font-size: 12.6166rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 14.8rem;
+    color: var(--txt-main-color);
+}
+
+.buttons {
+    display: flex;
+    gap: 4rem;
+}
+
+.controlButton {
+    transition: transform 0.3s ease-in-out;
+}
+
+.controlButton:hover {
+    transform: scale(1.1);
+}
+
+#sounds {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 3.2rem;
+}
+
+.soundButton {
+    width: 13.8rem;
+    background: var(--card-bg-color);
+    border-radius: 2.4rem;
+    height: 15.2rem;
+
+    transition: background-color 0.5s ease;
+}
+
+.soundButton svg path {
+    transition: fill 0.5s ease;
+}
+
+.soundButton.selected {
+    background-color: var(--card-bg-select-color);
+}
+
+.soundButton.selected svg path {
+    fill: var(--btn-select-color);
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*variaveis pra cor, cramp, talvez efeitos e ver nos projetos passados se falta algo que aprendi*/
+/*adicionar sons ao clicar nos botoes*/
+
+/*verificar se nao falta nada, rever tudo*/
+
+/*cramp por ultimo*/
+
+/*pad start*/
