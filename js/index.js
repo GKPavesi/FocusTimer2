@@ -1,3 +1,5 @@
+import { Sounds } from "./sounds.js";
+
 const playButton = document.querySelector("#play");
 const stopButton = document.querySelector("#stop");
 const plusButton = document.querySelector("#plus");
@@ -9,6 +11,7 @@ const rainButton = document.querySelector('#rainButton');
 const coffeeShopButton = document.querySelector('#coffeeShopButton');
 const firePlaceButton = document.querySelector('#firePlaceButton');
 const soundButtons = document.querySelectorAll('.soundButton');
+const sounds = Sounds();
 let timerTimeOut = 0;
 let isCountDownInactive = true;
 
@@ -22,6 +25,7 @@ coffeeShopButton.addEventListener('click', handleCoffeeShopButton);
 firePlaceButton.addEventListener('click', handleFirePlaceButton);
 
 function handlePlayButton() {
+    sounds.pressButton();
     if (isCountDownInactive) {
         countdown();
     }

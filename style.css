@@ -104,3 +104,6 @@ button {
 /*ver outra maneira de resetar o timer tb, pensar bem na maneira de como isso vai funcionar td*/
 
 /*loop nos sounds*/
+
+/*esquema no audio para desativar todos ao clicar em um e começar a tocar ele, porem fazer
+validação para ver se esse ja nao esta sendo tocado*/
