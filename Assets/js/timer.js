@@ -1,8 +1,16 @@
-function Timer({ minutesDisplay, secondsDisplay, isCountDownInactive }) {
+function Timer({ minutesDisplay, secondsDisplay, sounds }) {
 
     let timerTimeOut = 0;
+    let isCountDownInactive = true;
+
+    function startCountDown() {
+        if (isCountDownInactive) {
+            countdown();
+        }
+    }
 
     function countdown() {
+        
         isCountDownInactive = false;
         timerTimeOut = setTimeout(() => {
             let minutes = Number(minutesDisplay.textContent);
@@ -11,6 +19,8 @@ function Timer({ minutesDisplay, secondsDisplay, isCountDownInactive }) {
             let updateMinutes = seconds == 0;
 
             if (noTimeLeft) {
+                sounds.timeEnd();
+                resetControls();
                 isCountDownInactive = true;
                 return
             }
@@ -24,15 +34,20 @@ function Timer({ minutesDisplay, secondsDisplay, isCountDownInactive }) {
             minutesDisplay.textContent = String(minutes).padStart(2, "0");
 
             countdown();
-        }, 1000)
+        }, 100)
     }
 
     function hold() {
         clearTimeout(timerTimeOut);
+        isCountDownInactive = true;
+    }
+
+    function resetControls() {
+
     }
 
     return {
-        countdown,
+        startCountDown,
         hold
     }
 }

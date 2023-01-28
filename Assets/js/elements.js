@@ -9,6 +9,5 @@ const rainButton = document.querySelector('#rainButton');
 const coffeeShopButton = document.querySelector('#coffeeShopButton');
 const firePlaceButton = document.querySelector('#firePlaceButton');
 const soundButtons = document.querySelectorAll('.soundButton');
-let isCountDownInactive = true;
 
-export { playButton, stopButton, plusButton, minusButton, minutesDisplay, secondsDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, isCountDownInactive }
+export { playButton, stopButton, plusButton, minusButton, minutesDisplay, secondsDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons }

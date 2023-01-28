@@ -1,6 +1,6 @@
-import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons} from './elements.js';
+import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons } from './elements.js';
 
-function Events({sounds, timer, isCountDownInactive}) {
+function Events({ sounds, timer }) {
     playButton.addEventListener('click', handlePlayButton);
     stopButton.addEventListener('click', handleStopButton);
     plusButton.addEventListener('click', handlePlusButton);
@@ -12,19 +12,18 @@ function Events({sounds, timer, isCountDownInactive}) {
 
     function handlePlayButton() {
         sounds.pressButton();
-        if (isCountDownInactive) {
-            timer.countdown();
-        }
+        timer.startCountDown();
     }
 
 
 
     function handleStopButton() {
+        sounds.pressButton();
         timer.hold();
-        isCountDownInactive = true;
     }
 
     function handlePlusButton() {
+        sounds.pressButton();
         let currentMinutes = Number(minutesDisplay.textContent);
         let isNotANumber = isNaN(currentMinutes);
 
@@ -38,6 +37,7 @@ function Events({sounds, timer, isCountDownInactive}) {
     }
 
     function handleMinusButton() {
+        sounds.pressButton();
         let currentMinutes = Number(minutesDisplay.textContent);
         let isNotANumber = isNaN(currentMinutes);
         let isResultPositive = currentMinutes >= 5;
@@ -54,27 +54,32 @@ function Events({sounds, timer, isCountDownInactive}) {
     }
 
     function handleFlorestButton() {
+        sounds.pressButton();
         disableAllSoundButtons();
         florestButton.classList.add("selected");
     }
 
 
     function handleRainButton() {
+        sounds.pressButton();
         disableAllSoundButtons();
         rainButton.classList.add("selected");
     }
 
     function handleCoffeeShopButton() {
+        sounds.pressButton();
         disableAllSoundButtons();
         coffeeShopButton.classList.add("selected");
     }
 
     function handleFirePlaceButton() {
+        sounds.pressButton();
         disableAllSoundButtons();
         firePlaceButton.classList.add("selected");
     }
 
     function disableAllSoundButtons() {
+        sounds.pressButton();
         soundButtons.forEach(function (element) {
             element.classList.remove("selected")
         })
