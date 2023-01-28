@@ -22,7 +22,8 @@ function Sounds() {
     }
 
     return {
-        pressButton
+        pressButton,
+        timeEnd
     }
 }
 
