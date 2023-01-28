@@ -113,3 +113,10 @@ validação para ver se esse ja nao esta sendo tocado*/
 /*refatorar fazendo funções aonde se repete codigo*/
 
 /*ver se separa melhor os trem*/
+
+/*nao deixar abaixar de 5 min, ver botao de pausa oq faz com essa função nova*/
+
+/*pensar bem nos sons e como parar os sons quando acionar um novo (atentar para nao parar 
+o atual se ele ja estiver tocando e ter outro click nele)*/
+
+/*ver funcionalidade de resetar o timer ao clicar duas vezes no botao de parar ou algo assim*/

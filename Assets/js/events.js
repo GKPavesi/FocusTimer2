@@ -1,4 +1,4 @@
-import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons } from './elements.js';
+import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, secondsDisplay } from './elements.js';
 
 function Events({ sounds, timer }) {
     playButton.addEventListener('click', handlePlayButton);
@@ -40,7 +40,8 @@ function Events({ sounds, timer }) {
         sounds.pressButton();
         let currentMinutes = Number(minutesDisplay.textContent);
         let isNotANumber = isNaN(currentMinutes);
-        let isResultPositive = currentMinutes >= 5;
+        let updatedMinutes = currentMinutes - 5;
+        let isResultLessThanFive = ((updatedMinutes) >= 5) ? false : true;
 
         if (isNotANumber) {
             alert("Os minutos têm que ser um número")
@@ -48,9 +49,14 @@ function Events({ sounds, timer }) {
             return;
         }
 
-        isResultPositive ? currentMinutes -= 5 : currentMinutes = 0;
+        if (isResultLessThanFive) {
+            alert("Você não pode deixar os minutos abaixo de 5");
+            updatedMinutes = 5;
+            secondsDisplay.textContent = String("00");
+        }
 
-        minutesDisplay.textContent = String(currentMinutes).padStart(2, "0");
+        minutesDisplay.textContent = String(updatedMinutes).padStart(2, "0");
+
     }
 
     function handleFlorestButton() {
