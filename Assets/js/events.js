@@ -61,33 +61,59 @@ function Events({ sounds, timer }) {
 
     function handleFlorestButton() {
         sounds.pressButton();
+        if (florestButton.classList.contains("selected")) {
+            return
+        }
         disableAllSoundButtons();
+        disableAllSounds();
         florestButton.classList.add("selected");
+        sounds.florestSoundStart();
     }
 
 
     function handleRainButton() {
         sounds.pressButton();
+        if (rainButton.classList.contains("selected")) {
+            return
+        }
         disableAllSoundButtons();
+        disableAllSounds();
         rainButton.classList.add("selected");
+        sounds.rainSoundStart();
     }
 
     function handleCoffeeShopButton() {
         sounds.pressButton();
+        if (coffeeShopButton.classList.contains("selected")) {
+            return
+        }
         disableAllSoundButtons();
+        disableAllSounds();
         coffeeShopButton.classList.add("selected");
+        sounds.coffeeShopSoundStart();
     }
 
     function handleFirePlaceButton() {
         sounds.pressButton();
+        if (firePlaceButton.classList.contains("selected")) {
+            return
+        }
         disableAllSoundButtons();
+        disableAllSounds();
         firePlaceButton.classList.add("selected");
+        sounds.firePlaceSoundStart();
     }
 
     function disableAllSoundButtons() {
         sounds.pressButton();
         soundButtons.forEach(function (element) {
             element.classList.remove("selected")
+        })
+    }
+
+    function disableAllSounds() {
+        sounds.soundsArray.forEach(function(element) {
+            element.pause();
         })
     }
 }

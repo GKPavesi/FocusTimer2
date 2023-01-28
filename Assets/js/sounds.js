@@ -21,9 +21,32 @@ function Sounds() {
         kitchenTimer.play();
     }
 
+    function florestSoundStart() {
+        florestSound.play();
+    }
+
+    function rainSoundStart() {
+        rainSound.play();
+    }
+
+    function coffeeShopSoundStart() {
+        coffeeShopSound.play();
+    }
+    
+    function firePlaceSoundStart() {
+        firePlaceSound.play();
+    }
+
+    const soundsArray = [florestSound, rainSound, coffeeShopSound, firePlaceSound]
+
     return {
         pressButton,
-        timeEnd
+        timeEnd,
+        florestSoundStart,
+        rainSoundStart,
+        coffeeShopSoundStart,
+        firePlaceSoundStart,
+        soundsArray
     }
 }
 
