@@ -11,6 +11,19 @@
     --card-bg-color: #E1E1E6;
     --btn-select-color: #ffffff;
     --card-bg-select-color: #02799D;
+
+    --page-darkmode-color: #121214;
+    --txt-darkmode-color: #FFFFFF;
+    --btn-darkmode-fill-color: #C4C4CC;
+    --card-bg-darkmode-color: #29292E;
+    --card-bg-darkmode-select-color: #0A3442;
+    --card-bg-darkmode-select-fill-color: #FFFFFF;
+}
+
+header {
+    position: absolute;
+    top: 6.4rem;
+    right: 6.4rem;
 }
 
 body {
@@ -87,6 +100,46 @@ button {
     cursor: pointer;
 }
 
+/***** DARK MODE *****/
+.hide {
+    display: none;
+    opacity: 0;
+}
+
+body.darkMode {
+    background-color: var(--page-darkmode-color);
+}
+
+.time.darkMode {
+    color: var(--txt-darkmode-color);
+}
+
+.controlButton.darkMode svg path {
+    fill: var(--btn-darkmode-fill-color);
+}
+
+.soundButton.darkMode svg path {
+    fill: var(--btn-darkmode-fill-color);
+}
+
+.soundButton.darkMode {
+    background-color: var(--card-bg-darkmode-color);
+}
+
+.soundButton.selected.darkMode {
+    background-color: var(--card-bg-darkmode-select-color);
+}
+
+.soundButton.selected.darkMode svg path {
+    fill: var(--card-bg-darkmode-select-fill-color);
+}
+
+
+
+
+
+
+
 /*variaveis pra cor, cramp, talvez efeitos e ver nos projetos passados se falta algo que aprendi*/
 /*adicionar sons ao clicar nos botoes*/
 
@@ -122,3 +175,12 @@ o atual se ele ja estiver tocando e ter outro click nele)*/
 /*ver funcionalidade de resetar o timer ao clicar duas vezes no botao de parar ou algo assim*/
 
 /*ao dar um play no meio do contador ele reseta pro valor que tava no play*/
+
+
+/*converter pra dark mode, ajeitar as novas funcionalidades de volume e depois refatorar/rever td
+e ver possiveis melhorias para os controles do time*/
+
+/*os botoes de som vai ter que desativar ou algo assim quando um tiver ativo*/
+
+
+/*rever essas funcionalidades novas dos controls e do dark mode*/

@@ -8,6 +8,11 @@ const florestButton = document.querySelector('#florestButton');
 const rainButton = document.querySelector('#rainButton');
 const coffeeShopButton = document.querySelector('#coffeeShopButton');
 const firePlaceButton = document.querySelector('#firePlaceButton');
+const lightModeButton = document.querySelector('#lightModeButton')
+const darkModeButton = document.querySelector('#darkModeButton')
 const soundButtons = document.querySelectorAll('.soundButton');
+const controlButtons = document.querySelectorAll('.controlButton');
+const bodyElement = document.querySelector('body');
+const timeElements = document.querySelector('.time')
 
-export { playButton, stopButton, plusButton, minusButton, minutesDisplay, secondsDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons }
+export { playButton, stopButton, plusButton, minusButton, minutesDisplay, secondsDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, lightModeButton, darkModeButton, controlButtons, bodyElement, timeElements }

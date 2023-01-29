@@ -1,4 +1,4 @@
-import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, secondsDisplay } from './elements.js';
+import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, secondsDisplay, lightModeButton, darkModeButton, controlButtons, bodyElement, timeElements } from './elements.js';
 
 function Events({ sounds, timer }) {
     playButton.addEventListener('click', handlePlayButton);
@@ -9,6 +9,9 @@ function Events({ sounds, timer }) {
     rainButton.addEventListener('click', handleRainButton);
     coffeeShopButton.addEventListener('click', handleCoffeeShopButton);
     firePlaceButton.addEventListener('click', handleFirePlaceButton);
+    lightModeButton.addEventListener('click', handleModeButton);
+    darkModeButton.addEventListener('click', handleModeButton);
+
 
     function handlePlayButton() {
         sounds.pressButton();
@@ -111,6 +114,29 @@ function Events({ sounds, timer }) {
         })
     }
 
+
+    function handleModeButton() {
+        lightModeButton.classList.toggle("hide");
+        darkModeButton.classList.toggle("hide");
+
+        bodyElement.classList.toggle("darkMode");
+        timeElements.classList.toggle("darkMode");
+
+        toggleControlButtons();
+        toggleSoundButtons();
+    }
+
+    function toggleControlButtons() {
+        controlButtons.forEach(function (element) {
+            element.classList.toggle("darkMode")
+        })
+    }
+
+    function toggleSoundButtons() {
+        soundButtons.forEach(function (element) {
+            element.classList.toggle("darkMode")
+        })
+    }
 
 }
 
