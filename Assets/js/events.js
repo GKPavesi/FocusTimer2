@@ -65,7 +65,7 @@ function Events({ sounds, timer }) {
             return
         }
         disableAllSoundButtons();
-        disableAllSounds();
+        sounds.stopAllSounds();
         florestButton.classList.add("selected");
         sounds.florestSoundStart();
     }
@@ -77,7 +77,7 @@ function Events({ sounds, timer }) {
             return
         }
         disableAllSoundButtons();
-        disableAllSounds();
+        sounds.stopAllSounds();
         rainButton.classList.add("selected");
         sounds.rainSoundStart();
     }
@@ -88,7 +88,7 @@ function Events({ sounds, timer }) {
             return
         }
         disableAllSoundButtons();
-        disableAllSounds();
+        sounds.stopAllSounds();
         coffeeShopButton.classList.add("selected");
         sounds.coffeeShopSoundStart();
     }
@@ -99,7 +99,7 @@ function Events({ sounds, timer }) {
             return
         }
         disableAllSoundButtons();
-        disableAllSounds();
+        sounds.stopAllSounds();
         firePlaceButton.classList.add("selected");
         sounds.firePlaceSoundStart();
     }
@@ -111,11 +111,7 @@ function Events({ sounds, timer }) {
         })
     }
 
-    function disableAllSounds() {
-        sounds.soundsArray.forEach(function(element) {
-            element.pause();
-        })
-    }
+
 }
 
 export { Events }

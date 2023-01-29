@@ -6,7 +6,8 @@ function Sounds() {
     const florestSound = new Audio("./Assets/sounds/Floresta.wav");
     const rainSound = new Audio("./Assets/sounds/Chuva.wav");
     const coffeeShopSound = new Audio("./Assets/sounds/Cafeteria.wav");
-    const firePlaceSound = new Audio("./Assets/sounds/Lareira.wav")
+    const firePlaceSound = new Audio("./Assets/sounds/Lareira.wav");
+    const soundsArray = [florestSound, rainSound, coffeeShopSound, firePlaceSound];
 
     florestSound.loop = true;
     rainSound.loop = true;
@@ -37,7 +38,11 @@ function Sounds() {
         firePlaceSound.play();
     }
 
-    const soundsArray = [florestSound, rainSound, coffeeShopSound, firePlaceSound]
+    function stopAllSounds() {
+        soundsArray.forEach(function(element) {
+            element.pause();
+        })
+    }
 
     return {
         pressButton,
@@ -46,7 +51,7 @@ function Sounds() {
         rainSoundStart,
         coffeeShopSoundStart,
         firePlaceSoundStart,
-        soundsArray
+        stopAllSounds
     }
 }
 
