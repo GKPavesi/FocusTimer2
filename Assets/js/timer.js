@@ -1,4 +1,4 @@
-function Timer({ minutesDisplay, secondsDisplay, sounds }) {
+function Timer({ minutesDisplay, secondsDisplay, sounds, plusButton, minusButton }) {
 
     let timerTimeOut = 0;
     let isCountDownInactive = true;
@@ -12,6 +12,7 @@ function Timer({ minutesDisplay, secondsDisplay, sounds }) {
             originalSeconds = Number(secondsDisplay.textContent);
         }
         if (isCountDownInactive) {
+            disablePlusMinusButtons();
             countdown();
         }
     }
@@ -29,6 +30,7 @@ function Timer({ minutesDisplay, secondsDisplay, sounds }) {
                 sounds.timeEnd();
                 isCountDownInactive = true;
                 resetTimer();
+                enablePlusMinusButtons();
                 return
             }
 
@@ -48,11 +50,22 @@ function Timer({ minutesDisplay, secondsDisplay, sounds }) {
         clearTimeout(timerTimeOut);
         isCountDownInactive = true;
         isPaused = true;
+        enablePlusMinusButtons();
     }
 
     function resetTimer() {
         secondsDisplay.textContent = String(originalSeconds).padStart(2, "0");
         minutesDisplay.textContent = String(originalMinutes).padStart(2, "0");
+    }
+
+    function disablePlusMinusButtons() {
+        plusButton.setAttribute('disabled', '');
+        minusButton.setAttribute('disabled', '');
+    }
+
+    function enablePlusMinusButtons() {
+        plusButton.removeAttribute('disabled');
+        minusButton.removeAttribute('disabled');
     }
 
     return {
