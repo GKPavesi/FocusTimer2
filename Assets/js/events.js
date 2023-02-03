@@ -1,5 +1,4 @@
 import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, secondsDisplay, lightModeButton, darkModeButton, controlButtons, bodyElement, timeElements, florestSoundControl, rainSoundControl, coffeeShopSoundControl, firePlaceSoundControl, soundControls } from './elements.js';
-import { Sounds } from './sounds.js';
 
 function Events({ sounds, timer }) {
     playButton.addEventListener('click', handlePlayButton);

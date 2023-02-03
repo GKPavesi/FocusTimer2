@@ -281,41 +281,25 @@ body.darkMode {
 
 /*ver se deixa o cara alterar o tempo com o relogio rodando*/
 
-/*adicionar sons no botoes, sons quando acabar o timer, ver de resetar o timer quando acabar tb*/
-/*ver outra maneira de resetar o timer tb, pensar bem na maneira de como isso vai funcionar td*/
 
-/*loop nos sounds*/
 
-/*esquema no audio para desativar todos ao clicar em um e começar a tocar ele, porem fazer
-validação para ver se esse ja nao esta sendo tocado*/
-
-/*reset timer*/
 
 /*refatorar fazendo funções aonde se repete codigo*/
 
 /*ver se separa melhor os trem*/
 
-/*nao deixar abaixar de 5 min, ver botao de pausa oq faz com essa função nova*/
-
-/*pensar bem nos sons e como parar os sons quando acionar um novo (atentar para nao parar 
-o atual se ele ja estiver tocando e ter outro click nele)*/
 
 /*ver funcionalidade de resetar o timer ao clicar duas vezes no botao de parar ou algo assim*/
 
-/*ao dar um play no meio do contador ele reseta pro valor que tava no play*/
 
 
 /*converter pra dark mode, ajeitar as novas funcionalidades de volume e depois refatorar/rever td
 e ver possiveis melhorias para os controles do time*/
 
-/*os botoes de som vai ter que desativar ou algo assim quando um tiver ativo*/
 
 
 /*rever essas funcionalidades novas dos controls e do dark mode*/
 
-/*setar atributo de volume pra metade e esconder os outros*/
-
-/*event listeners nesses inputs*/
 
 
 /*ver como estilizar esse type range, deixar isso por ultimo*/

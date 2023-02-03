@@ -7,7 +7,7 @@ function Timer({ minutesDisplay, secondsDisplay, sounds }) {
     let isPaused = false;
 
     function startCountDown() {
-        if (!isPaused) {
+        if (!isPaused && isCountDownInactive) {
             originalMinutes = Number(minutesDisplay.textContent);
             originalSeconds = Number(secondsDisplay.textContent);
         }
