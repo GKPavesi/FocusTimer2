@@ -43,7 +43,7 @@ function Timer({ minutesDisplay, secondsDisplay, sounds, plusButton, minusButton
             minutesDisplay.textContent = String(minutes).padStart(2, "0");
 
             countdown();
-        }, 10)
+        }, 1000)
     }
 
     function hold() {
