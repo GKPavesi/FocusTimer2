@@ -1,4 +1,5 @@
-import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, secondsDisplay, lightModeButton, darkModeButton, controlButtons, bodyElement, timeElements } from './elements.js';
+import { playButton, stopButton, plusButton, minusButton, minutesDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, secondsDisplay, lightModeButton, darkModeButton, controlButtons, bodyElement, timeElements, florestSoundControl, rainSoundControl, coffeeShopSoundControl, firePlaceSoundControl, soundControls } from './elements.js';
+import { Sounds } from './sounds.js';
 
 function Events({ sounds, timer }) {
     playButton.addEventListener('click', handlePlayButton);
@@ -11,14 +12,15 @@ function Events({ sounds, timer }) {
     firePlaceButton.addEventListener('click', handleFirePlaceButton);
     lightModeButton.addEventListener('click', handleModeButton);
     darkModeButton.addEventListener('click', handleModeButton);
-
+    florestSoundControl.addEventListener('input', handleFlorestSound)
+    rainSoundControl.addEventListener('input', handleRainSound)
+    coffeeShopSoundControl.addEventListener('input', handleCoffeeShopSound)
+    firePlaceSoundControl.addEventListener('input', handleFirePlaceSound)
 
     function handlePlayButton() {
         sounds.pressButton();
         timer.startCountDown();
     }
-
-
 
     function handleStopButton() {
         sounds.pressButton();
@@ -70,6 +72,10 @@ function Events({ sounds, timer }) {
         disableAllSoundButtons();
         sounds.stopAllSounds();
         florestButton.classList.add("selected");
+        hideAllControls();
+        florestSoundControl.classList.toggle('hide')
+        florestSoundControl.value = 0.5;
+        sounds.florestSound.volume = 0.5;
         sounds.florestSoundStart();
     }
 
@@ -82,6 +88,10 @@ function Events({ sounds, timer }) {
         disableAllSoundButtons();
         sounds.stopAllSounds();
         rainButton.classList.add("selected");
+        hideAllControls();
+        rainSoundControl.classList.toggle('hide')
+        rainSoundControl.value = 0.5;
+        sounds.rainSound.volume = 0.5;
         sounds.rainSoundStart();
     }
 
@@ -93,6 +103,10 @@ function Events({ sounds, timer }) {
         disableAllSoundButtons();
         sounds.stopAllSounds();
         coffeeShopButton.classList.add("selected");
+        hideAllControls();
+        coffeeShopSoundControl.classList.toggle('hide');
+        coffeeShopSoundControl.value = 0.5;
+        sounds.coffeeShopSound.volume = 0.5;
         sounds.coffeeShopSoundStart();
     }
 
@@ -104,6 +118,10 @@ function Events({ sounds, timer }) {
         disableAllSoundButtons();
         sounds.stopAllSounds();
         firePlaceButton.classList.add("selected");
+        hideAllControls();
+        firePlaceSoundControl.classList.toggle('hide');
+        firePlaceSoundControl.value = 0.5;
+        sounds.firePlaceSound.volume = 0.5;
         sounds.firePlaceSoundStart();
     }
 
@@ -136,6 +154,28 @@ function Events({ sounds, timer }) {
         soundButtons.forEach(function (element) {
             element.classList.toggle("darkMode")
         })
+    }
+
+    function hideAllControls() {
+        soundControls.forEach(function(element) {
+            element.classList.add('hide')
+        })
+    }
+    
+    function handleFlorestSound() {
+        sounds.florestSound.volume = florestSoundControl.value;
+    }
+
+    function handleRainSound() {
+        sounds.rainSound.volume = rainSoundControl.value;
+    }
+
+    function handleCoffeeShopSound() {
+        sounds.coffeeShopSound.volume = coffeeShopSoundControl.value;
+    }
+
+    function handleFirePlaceSound() {
+        sounds.firePlaceSound.volume = firePlaceSoundControl.value;
     }
 
 }

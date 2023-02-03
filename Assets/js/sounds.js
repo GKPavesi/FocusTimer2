@@ -51,7 +51,11 @@ function Sounds() {
         rainSoundStart,
         coffeeShopSoundStart,
         firePlaceSoundStart,
-        stopAllSounds
+        stopAllSounds,
+        florestSound,
+        rainSound,
+        coffeeShopSound,
+        firePlaceSound
     }
 }
 

@@ -13,6 +13,11 @@ const darkModeButton = document.querySelector('#darkModeButton')
 const soundButtons = document.querySelectorAll('.soundButton');
 const controlButtons = document.querySelectorAll('.controlButton');
 const bodyElement = document.querySelector('body');
-const timeElements = document.querySelector('.time')
+const timeElements = document.querySelector('.time');
+const florestSoundControl = document.querySelector('#florestSoundControl');
+const rainSoundControl = document.querySelector('#rainSoundControl');
+const coffeeShopSoundControl = document.querySelector('#coffeeShopSoundControl');
+const firePlaceSoundControl = document.querySelector('#firePlaceSoundControl');
+const soundControls = document.querySelectorAll('.volume-control');
 
-export { playButton, stopButton, plusButton, minusButton, minutesDisplay, secondsDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, lightModeButton, darkModeButton, controlButtons, bodyElement, timeElements }
+export { playButton, stopButton, plusButton, minusButton, minutesDisplay, secondsDisplay, florestButton, rainButton, coffeeShopButton, firePlaceButton, soundButtons, lightModeButton, darkModeButton, controlButtons, bodyElement, timeElements, florestSoundControl, rainSoundControl, coffeeShopSoundControl, firePlaceSoundControl, soundControls }
